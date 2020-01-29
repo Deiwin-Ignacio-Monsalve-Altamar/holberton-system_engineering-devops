@@ -1,6 +1,0 @@
-#!/bin/bash
-ls -l -a
-
-cd /boot
-
-ls -l -a
