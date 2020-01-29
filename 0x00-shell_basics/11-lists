@@ -1,7 +1,3 @@
 #!/bin/bash
-ls -l -a
-
-cd /boot
-
-ls -l -a
+ls -l -a | cd | /boot | ls -l -a
 
