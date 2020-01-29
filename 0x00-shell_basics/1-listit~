@@ -1,9 +1,0 @@
-#!/bin/bash
-echo
- "Descargas                             Música
- Documentos                            Plantillas
- Escritorio                            Público
- examples.desktop                      snap
- holbertonschool-zero_day              Vagrantfile
- holberton-system_engineering-devops   Vídeos
- Imágenes                             'VirtualBox VMs'"
