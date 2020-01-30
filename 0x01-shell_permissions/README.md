@@ -1,1 +1,0 @@
-#Permissions to file and directory in linux
