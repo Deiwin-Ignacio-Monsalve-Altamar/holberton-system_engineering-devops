@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al -p -m -tr \n
+ls -al -p -m -tr
