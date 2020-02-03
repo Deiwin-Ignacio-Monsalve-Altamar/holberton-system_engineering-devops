@@ -1,0 +1,1 @@
+#creation and use of linux commands for creating variables and expansions among others
