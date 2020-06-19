@@ -1,1 +1,9 @@
 #!/usr/bin/env bash
+#print repetion
+
+i=0
+while [ $i -le 10 ]
+do
+  echo "Holberton school"
+  ((i++))
+done
