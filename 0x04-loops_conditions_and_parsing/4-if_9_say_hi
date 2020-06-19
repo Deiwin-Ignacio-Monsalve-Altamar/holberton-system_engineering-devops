@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #print is equal 10 print hi
 i=0
 while [ $i -lt 11 ]
