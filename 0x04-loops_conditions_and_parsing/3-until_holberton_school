@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 #print repetion until
-contador=1
 termina=10
-until [ $termina -lt $contador ]
+until [ $termina -lt 1 ]
 do
-  echo "Holberton School"
-  ((i--))
+    echo "Holberton School"
+    ((termina--))
 done
