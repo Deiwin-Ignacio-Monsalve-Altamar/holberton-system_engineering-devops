@@ -1,1 +1,14 @@
 #!/usr/bin/env bash
+
+#print is equal 10 print hi
+i=1
+while [ $i -le 10 ]
+do
+    if [ $i != 9 ]
+    then
+        echo "Holberton school"
+    else
+        echo "Hi"
+    fi
+    ((i++))
+done
