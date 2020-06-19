@@ -1,1 +1,10 @@
 #!/usr/bin/env bash
+
+#print repetion until
+contador=1
+termina=10
+until [ $termina -lt $contador ]
+do
+  echo $contador
+  let contador=$contador+1
+done
