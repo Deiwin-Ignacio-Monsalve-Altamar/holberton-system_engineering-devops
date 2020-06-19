@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 #print repetion until
-termina=10
-until [ $termina -lt 1 ]
+SCHOOL_NAME="Holberton School"
+COUNTER=10
+until [ $COUNTER -lt 1 ]
 do
-    echo "Holberton School"
-    ((termina--))
+	echo "$SCHOOL_NAME"
+	((COUNTER--))
 done
