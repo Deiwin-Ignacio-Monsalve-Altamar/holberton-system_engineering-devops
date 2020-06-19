@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-
-#print repetion until
-SCHOOL_NAME="Holberton School"
-COUNTER=10
-until [ $COUNTER -lt 1 ]
+#print repetion until"
+COUNTER=0
+until (($COUNTER>=10))
 do
-	echo "$SCHOOL_NAME"
-	((COUNTER--))
+	echo "Holberton School"
+	((COUNTER++))
 done
