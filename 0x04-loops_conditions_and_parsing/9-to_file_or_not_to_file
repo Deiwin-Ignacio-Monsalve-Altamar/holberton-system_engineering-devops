@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #print repetion dependig conditionals
 FILE="holbertonschool"
-if [ -e $FILE ]
+if [ -e "$FILE" ]
 then
     echo "$FILE holbertonschool file exists"
-    if [ -s $FILE ]
+    if [ -s "$FILE" ]
     then
         echo "$FILE holbertonschool file is empty"
     else
         echo "$FILE holbertonschool file is not empty"
     fi
-    if [ -f $FILE ]
+    if [ -f "$FILE" ]
     then
         echo "$FILE holbertonschool is a regular file"
     fi
