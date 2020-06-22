@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #that manages manage_my_process. (both files need to be pushed to git)
-case $1 in
+case "$1" in
     start)
         ./manage_my_process &
         echo $$ > /var/run/my_process.pid
