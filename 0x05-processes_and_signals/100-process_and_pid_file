@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 #kills 4-to_infinity_and_beyond process.
 echo $$ > /var/run/holbertonscript.pid
-trap "echo I hate the kill command; sudo rm -R /var/run/holbertonscript.pid; exit" SIGTERM
-trap "echo Y U no love me?!" SIGINT
-trap "sudo rm /var/run/holbertonscript.pid; exit" SIGQUIT
+function l_uno {
+	"echo I hate the kill command"
+	sudo rm -R /var/run/holbertonscript.pid
+	exit
+}
+
+function l_dos {
+	"echo Y U no love me?!"
+	exit
+}
+
+function l_tres{
+	sudo rm -R /var/run/holbertonscript.pid
+	exit
+}
+
+trap l_uno SIGTERM 
+trap l_dos SIGINT
+trap l_tres SIGQUIT
 
 while ((1))
 do
