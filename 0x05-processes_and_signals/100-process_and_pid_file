@@ -2,13 +2,13 @@
 #kills 4-to_infinity_and_beyond process.
 echo $$ > /var/run/holbertonscript.pid
 function l_uno {
-	"echo I hate the kill command"
+	echo "I hate the kill command"
 	sudo rm -R /var/run/holbertonscript.pid
 	exit
 }
 
 function l_dos {
-	"echo Y U no love me?!"
+	echo "Y U no love me?!"
 	exit
 }
 
