@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#
-trap "I am invincible!!!" SIGTERM
+#Bash script that displays:
+trap "echo I am invincible!!!" SIGTERM
 while ((1))
 do
     echo "To infinity and beyond"
