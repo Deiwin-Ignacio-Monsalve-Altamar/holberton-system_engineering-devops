@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Write a manage_my_process Bash script that
+while ((1))
+do
+    echo "I am alive!" >> /tmp/my_process
+done
