@@ -3,10 +3,12 @@
 file_line { 'IdentityFile'
   ensure => present,
   path   => '/tmp/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/holberton'
+  line   => 'IdentityFile ~/.ssh/holberton',
+  match  => '^IdentityFile'
 }
 file_line { 'PasswordAuthentication'
   ensure => present,
   path   => '/tmp/ssh/ssh_config',
-  line   => 'PasswordAuthentication no'
+  line   => 'PasswordAuthentication no',
+  match  => '^PasswordAuthentication'
 }
