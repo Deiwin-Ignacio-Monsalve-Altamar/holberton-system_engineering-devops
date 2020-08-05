@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 #Nginx server so that /redirect_me is redirecting to another page
-apt-get -y update 
-apt-get -y install nginx 
-echo "Holberton School" | sudo tee /var/www/html/index.html 
+apt-get update
+apt-get -y install nginx
+sudo service nginx start
 
-default="/etc/nginx/sites-enabled/default"
-location="/redirect_me {rewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;}"
-sudo sed -i "30i $location" "$default"
-service nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.html
+
+otherdefault="/etc/nginx/sites-enabled/default"
+location="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sudo sed -i "30i $location" "$otherdefault"
+sudo service nginx restart
