@@ -10,6 +10,6 @@ otherdefault="/etc/nginx/sites-enabled/default"
 location="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
 sudo sed -i "30i $location" "$otherdefault"
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
-error_page="\\\terror_page 404 /custom_404.html;\n\t\t location = /custom_404.html {\n\t\t root /usr/share/nginx/html;\n\t\t internal;\n\t}\n"
-sudo sed -i "33i $error_page" /etc/nginx/sites-enabled/default
+error_page="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\t root /usr/share/nginx/html;\n\t\t internal;\n\t}\n"
+sudo sed -i "33i $error_page" "$otherdefault"
 sudo service nginx restart
