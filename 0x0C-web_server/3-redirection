@@ -6,5 +6,5 @@ echo "Holberton School" | sudo tee /var/www/html/index.html
 
 default="/etc/nginx/sites-enabled/default"
 location="/redirect_me {rewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;}"
-sudo sed -i "$location" "$default"
+sudo sed -i "30i $location" "$default"
 service nginx start
