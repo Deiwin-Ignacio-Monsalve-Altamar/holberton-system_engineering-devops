@@ -4,6 +4,7 @@ apt-get -y update
 apt-get -y install nginx 
 echo "Holberton School" | sudo tee /var/www/html/index.html 
 
-REDIR="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"  
-sed -i "307 \ $REDIR" /etc/nginx/sites-available/default
+default="/etc/nginx/sites-enabled/default"
+location="location /redirect_me {rewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;}"
+sudo sed -i "30i $location" "$default"
 service nginx start
