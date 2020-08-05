@@ -9,7 +9,7 @@ echo "Holberton School" | sudo tee /var/www/html/index.html
 otherdefault="/etc/nginx/sites-enabled/default"
 location="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
 sudo sed -i "30i $location" "$otherdefault"
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/page_error.html
-error_page="error_page 404 /page_error.html;\nlocation = /page_error.html {\nroot /usr/share/nginx/html;\ninternal;\n}\n"
-sudo sed -i "33i $error_page" "$otherdefault"
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+error_page="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot/var/www/html;\ninternal;\n}\n"
+sudo sed -i "33i $error_page" /etc/nginx/sites-available/default
 sudo service nginx restart
