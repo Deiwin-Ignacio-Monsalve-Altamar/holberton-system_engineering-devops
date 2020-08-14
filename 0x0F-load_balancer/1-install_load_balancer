@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # install and configure HAProxy
-apt-get install software-properties-common
-add-apt-repository ppa:vbernat/haproxy-1.7
-apt-get update
-apt-get install haproxy=1.7.\*
+apt-get install software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-1.7 -y
+apt-get update -y
+apt-get install haproxy=1.7.\* -y
 
 echo -e "\nfrontend http
    bind *:80
