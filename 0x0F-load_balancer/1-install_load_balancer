@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # install and configure HAProxy
 apt-get install software-properties-common -y
-add-apt-repository ppa:vbernat/haproxy-1.7 -y
+add-apt-repository ppa:vbernat/haproxy-1.8 -y
 apt-get update -y
-apt-get install haproxy=1.7.\* -y
+apt-get install haproxy=1.8.\* -y
+sudo service haproxy start
 
 echo -e "\nfrontend http
    bind *:80
@@ -15,4 +16,4 @@ echo -e "\nbackend web_backend
    option forwardfor
    server 1651-web-01 35.196.97.61:80 check
    server 1651-web-02 34.75.200.40:80 check" >> /etc/haproxy/haproxy.cfg
-sudo systemctl restart haproxy
+sudo service haproxy restart
