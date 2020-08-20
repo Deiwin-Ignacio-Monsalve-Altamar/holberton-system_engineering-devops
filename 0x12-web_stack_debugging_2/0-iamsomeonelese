@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+#t can do anything it wants
+sudo -u "$1" whoami
