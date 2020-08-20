@@ -15,20 +15,3 @@ else
 		dig "$i.$1" | grep -A1 'ANSWER SECTION:'|tail -1| awk '{print $5}'	
 	done	
 fi
-global
-
-defaults
-    option forwardfor
-    option http-server-close
-
-frontend front_server
-	bind *:80
-	bind *:443 ssl crt /etc/haproxy/certs/www.1637web.tech.pem
-	redirect scheme https code 301 if !{ ssl_fc }
-	default_backend back_servers
- 
-backend back_servers
-	balance roundrobin
-	option forwardfor
-	server 1637-web-01 35.196.35.103:80 check
-	server 1637-web-02 34.75.67.159:80 check
