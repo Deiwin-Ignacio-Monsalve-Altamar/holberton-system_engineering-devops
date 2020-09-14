@@ -5,13 +5,13 @@
 def get_todo(users_id):
     """prints employees with completed to_do list"""
 
-    to_do_url = 'http://jsonplaceholder.typicode.com/todos'
-    employee_url = 'http://jsonplaceholder.typicode.com/users/{}'.format(
+    todo_url = 'http://jsonplaceholder.typicode.com/todos'
+    user_url = 'http://jsonplaceholder.typicode.com/users/{}'.format(
         users_id)
-    e = requests.get(employee_url)
-    to_do = requests.get(to_do_url)
+    user_employ = requests.get(user_url)
+    to_do = requests.get(todo_url)
 
-    employee_name = e.json().get('name')
+    employee_name = user_employ.json().get('name')
     n_task, comp_tasks = 0, []
     for task in to_do.json():
         if task.get('userId') == int(users_id):
