@@ -10,8 +10,8 @@ def gatherDataFromaAPI(id_users):
     url_users = "https://jsonplaceholder.typicode.com/users/{}".format(
         id_users)
 
-    todo_employ = requests.get(url_todo)
     users_employ = requests.get(url_users)
+    todo_employ = requests.get(url_todo)
 
     employ_name = users_employ.json().get('name')
     tasks_num, comp_tasks = 0, []
@@ -22,9 +22,8 @@ def gatherDataFromaAPI(id_users):
             if tasks.get('completed') is True:
                 comp_tasks.append(tasks)
 
-    print('Employee {} is \
-        done with tasks({}/{}):'.format(employ_name,
-                                        len(comp_tasks), tasks_num))
+    print('Employee {} is \done with tasks({}/{}):'
+          .format(employ_name, len(comp_tasks), tasks_num))
     for task in comp_tasks:
         print('\t {}'.format(task.get('title')))
 
