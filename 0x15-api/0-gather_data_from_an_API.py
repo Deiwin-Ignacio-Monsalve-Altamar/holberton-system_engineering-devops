@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """using this REST API, for a given employee ID"""
-import requests
-import sys
 
 
 def get_todo(users_id):
-    '''prints employees with completed to_do list'''
+    """prints employees with completed to_do list"""
 
     to_do_url = 'http://jsonplaceholder.typicode.com/todos'
     employee_url = 'http://jsonplaceholder.typicode.com/users/{}'.format(
