@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 """Extend your Python script to export data in the CSV format."""
-import csv
-import requests
-import sys
 
 
 def export_to_csv(users_id):
@@ -23,7 +20,7 @@ def export_to_csv(users_id):
     """open file of csv and add data"""
     with open("{}.csv".format(users_id), mode="w", newline='') as fd:
         """Write in the file user_id.csv"""
-        write_file = csv.writer(fd)
+        write_file = csv.writer(fd, quoting=csv.QUOTE_NONNUMERIC)
         for obj in comp_tasks:
             row = ["{}".format(users_id), "{}".format(employee_name),
                    "{}".format(obj.get('completed')),
@@ -32,5 +29,8 @@ def export_to_csv(users_id):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
+    import csv
+    import requests
+    import sys
+    if len(sys.argv) == 2: 
         export_to_csv(sys.argv[1])
