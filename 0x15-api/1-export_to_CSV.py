@@ -32,5 +32,5 @@ if __name__ == '__main__':
     import csv
     import requests
     import sys
-    if len(sys.argv) == 2: 
+    if len(sys.argv) == 2:
         export_to_csv(sys.argv[1])
