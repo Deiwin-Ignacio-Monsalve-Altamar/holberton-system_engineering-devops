@@ -4,30 +4,32 @@ import requests
 import sys
 
 
-def gatherDataFromaAPI(id_users):
-    """Gather data from an API"""
-    url_todo = "https://jsonplaceholder.typicode.com/todos"
-    url_users = "https://jsonplaceholder.typicode.com/users/{}".format(
-        id_users)
+def get_todo(users_id):
+    '''prints employees with completed to_do list'''
 
-    users_employ = requests.get(url_users)
-    todo_employ = requests.get(url_todo)
+    to_do_url = 'http://jsonplaceholder.typicode.com/todos'
+    employee_url = 'http://jsonplaceholder.typicode.com/users/{}'.format(
+        users_id)
+    e = requests.get(employee_url)
+    to_do = requests.get(to_do_url)
 
-    employ_name = users_employ.json().get('name')
-    tasks_num, comp_tasks = 0, []
+    employee_name = e.json().get('name')
+    n_task, comp_tasks = 0, []
+    for task in to_do.json():
+        if task.get('userId') == int(users_id):
+            n_task += 1
+            if task.get('completed') is True:
+                comp_tasks.append(task)
 
-    for tasks in todo_employ.json():
-        if tasks.get('userId') == int(id_users):
-            tasks_num += 1
-            if tasks.get('completed') is True:
-                comp_tasks.append(tasks)
+    print('Employee {} is done with tasks({}/{}):'
+          .format(employee_name, len(comp_tasks), n_task))
 
-    print('Employee {} is \done with tasks({}/{}):'
-          .format(employ_name, len(comp_tasks), tasks_num))
     for task in comp_tasks:
         print('\t {}'.format(task.get('title')))
 
 
 if __name__ == '__main__':
+    import requests
+    import sys
     if len(sys.argv) == 2:
-        gatherDataFromaAPI(sys.argv[1])
+        get_todo(sys.argv[1])
