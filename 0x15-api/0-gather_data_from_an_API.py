@@ -22,9 +22,9 @@ def gatherDataFromaAPI(id_users):
             if tasks.get('completed') is True:
                 comp_tasks.append(tasks)
 
-    print('Employee {} is done with\
-          tasks({}/{}): '.format(employ_name,
-                                 len(comp_tasks), tasks_num))
+    print('Employee {} is \
+        done with tasks({}/{}):'.format(employ_name,
+                                        len(comp_tasks), tasks_num))
     for task in comp_tasks:
         print('\t {}'.format(task.get('title')))
 
