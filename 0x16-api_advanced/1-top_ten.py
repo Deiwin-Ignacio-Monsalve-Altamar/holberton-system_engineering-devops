@@ -8,7 +8,7 @@ def top_ten(subreddit):
     headers = {
         'User-agent': 'Holberton',
     }
-    url = 'https://www.reddit.com/r/{}/hot.json?limitid=10'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     req = requests.get(url, headers=headers)
 
     if (req.status_code != 200):
